@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PlayListItem from '../components/PlayListItem.js';
 
-class App extends React.Component {
+export default class PlayList extends Component {
 
    constructor(props) {
       super(props);
@@ -71,4 +72,4 @@ class Content extends React.Component {
    }
 }
 
-export default App;
+//export default App;

@@ -7,7 +7,12 @@ export default class PlayListForm extends Component {
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    this.state = {name: ''};
+    this.state = {
+      userName: '',
+      songArtist: '',
+      songTitle: '',
+      songNotes: ''
+    };
   }
   handleNameChange(event){
     this.setState({name: event.target.value});

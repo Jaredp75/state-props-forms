@@ -7,7 +7,7 @@ export default class PlayList extends Component {
       super(props);
 
       this.state = {
-         state: []
+         songs: []
       }
    }
 
@@ -26,25 +26,18 @@ export default class PlayList extends Component {
              return results.json();
            }).then(data => {
              this.setState({songs: data});
-             console.log("state", this.state.songs);
+             //console.log("state", this.state.songs);
            })
      }
 
-
-
-
-   
-
    render() {
       return (
-         <div className = "card col-md-6">
-           <div className="card-block">
-             <form onSubmit={this.data} className="update-btn">
+           <div className="card-holder">
+             <form onSubmit={this.fetchData} className="update-btn">
               <input type='submit' className='btn btn-primary' value='Update'/>
             </form>
-            {this.state.songs.map(song => <PlayListItem song={song} key={song._id}/>)}
+            {this.state.songs.map(song => <PlayListItem song={ song } key={ song._id }/>)}
           </div>
-         </div>
       )
    }
 };
